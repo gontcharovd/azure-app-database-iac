@@ -1,3 +1,5 @@
 venv/
 *.swp
 *.json
+app/__pycache__/
+

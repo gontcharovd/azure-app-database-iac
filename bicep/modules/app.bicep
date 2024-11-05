@@ -13,6 +13,7 @@ resource app 'Microsoft.Web/sites@2023-12-01' = {
     serverFarmId: appServicePlan.id
     siteConfig: {
       linuxFxVersion: 'PYTHON|3.12'
+      appCommandLine: 'gunicorn --workers 1 --bind 0.0.0.0:8000 app.app:app'
     }
     httpsOnly: true
   }
