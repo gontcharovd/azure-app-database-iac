@@ -14,6 +14,12 @@ resource app 'Microsoft.Web/sites@2023-12-01' = {
     siteConfig: {
       linuxFxVersion: 'PYTHON|3.12'
       appCommandLine: 'gunicorn --workers 1 --bind 0.0.0.0:8000 app.app:app'
+      appSettings: [
+        {
+          name: 'WEBSITE_RUN_FROM_PACKAGE'
+          value: '1'
+        }
+      ]
     }
     httpsOnly: true
   }
